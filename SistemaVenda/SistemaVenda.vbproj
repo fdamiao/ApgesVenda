@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5398864B-C5DE-42A9-984E-A152FB75A5A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>SistemaVenda.My.MyApplication</StartupObject>
+    <RootNamespace>SistemaVenda</RootNamespace>
+    <AssemblyName>SistemaVenda</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>SistemaVenda.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>SistemaVenda.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>..\..\SGS\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design">
+      <HintPath>..\..\SGS\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts">
+      <HintPath>..\..\SGS\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroSuite">
+      <HintPath>..\..\MetroSuite v1.6.2\MetroSuite v1.6.2\Library\MetroSuite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.WinControls, Version=3.0.0.0, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2012.2.912.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Fldservice E.I\APGes\Telerik.WinControls.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="TelerikCommon, Version=3.0.0.0, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Formulario\frmCadastroEmpresa.Designer.vb">
+      <DependentUpon>frmCadastroEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmCadastroEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmCadastroUsuario.Designer.vb">
+      <DependentUpon>frmCadastroUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmCadastroUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmCategoria.Designer.vb">
+      <DependentUpon>frmCategoria.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmCategoria.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmEntrada.Designer.vb">
+      <DependentUpon>frmEntrada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmEntrada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmForncedor.Designer.vb">
+      <DependentUpon>frmForncedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmForncedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmListaVenda.Designer.vb">
+      <DependentUpon>frmListaVenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmListaVenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmProdutos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmProdutos.Designer.vb">
+      <DependentUpon>frmProdutos.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmRequizitarProd.Designer.vb">
+      <DependentUpon>frmRequizitarProd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmRequizitarProd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmTipoUsuario.Designer.vb">
+      <DependentUpon>frmTipoUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmTipoUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulario\frmVenda.Designer.vb">
+      <DependentUpon>frmVenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formulario\frmVenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modelo\categoria_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\detalhes_entradaprodu.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\detalhes_produto.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\empresa_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\entradaproduto_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\fonecedor_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Modelo.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Modelo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\Modelo.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\produtos_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\tipousuario_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\usuario_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modelo\venda_tb.vb">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Relatorio\frmRelatorioVenda.Designer.vb">
+      <DependentUpon>frmRelatorioVenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\frmRelatorioVenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Formulario\frmCadastroEmpresa.resx">
+      <DependentUpon>frmCadastroEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmCadastroUsuario.resx">
+      <DependentUpon>frmCadastroUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmCategoria.resx">
+      <DependentUpon>frmCategoria.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmEntrada.resx">
+      <DependentUpon>frmEntrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmForncedor.resx">
+      <DependentUpon>frmForncedor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmListaVenda.resx">
+      <DependentUpon>frmListaVenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmProdutos.resx">
+      <DependentUpon>frmProdutos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmRequizitarProd.resx">
+      <DependentUpon>frmRequizitarProd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmTipoUsuario.resx">
+      <DependentUpon>frmTipoUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulario\frmVenda.resx">
+      <DependentUpon>frmVenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewFolder1\frm_tela_saida.resx" />
+    <EmbeddedResource Include="NewFolder1\frm_veda_rapida.resx" />
+    <EmbeddedResource Include="NewFolder1\frm_Venda.resx" />
+    <EmbeddedResource Include="Relatorio\frmRelatorioVenda.resx">
+      <DependentUpon>frmRelatorioVenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\reportVenda.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Modelo\Modelo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Modelo.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Modelo\Modelo.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modelo.edmx</DependentUpon>
+      <LastGenOutput>Modelo.Context.vb</LastGenOutput>
+    </None>
+    <None Include="Modelo\Modelo.edmx.diagram">
+      <DependentUpon>Modelo.edmx</DependentUpon>
+    </None>
+    <None Include="Modelo\Modelo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Modelo.edmx</DependentUpon>
+      <LastGenOutput>Modelo.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\categoria_tb.datasource" />
+    <None Include="My Project\DataSources\detalhes_entradaprodu.datasource" />
+    <None Include="My Project\DataSources\detalhes_produto.datasource" />
+    <None Include="My Project\DataSources\empresa_tb.datasource" />
+    <None Include="My Project\DataSources\entradaproduto_tb.datasource" />
+    <None Include="My Project\DataSources\fonecedor_tb.datasource" />
+    <None Include="My Project\DataSources\produtos_tb.datasource" />
+    <None Include="My Project\DataSources\sistemaintegradovdEntities.datasource" />
+    <None Include="My Project\DataSources\tipousuario_tb.datasource" />
+    <None Include="My Project\DataSources\usuario_tb.datasource" />
+    <None Include="My Project\DataSources\venda_tb.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addss_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping Cart Loaded_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Supplier_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barcode_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_20px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Seasrch_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Qt_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Money_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Plus Math_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checked Checkbox 2_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barcode_25px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping Bag_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paper Money_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sell_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buy_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buyy_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Buyw_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_75px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Userw_75px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sell_Stock_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Product_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fork Lift_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bar Chart_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Product_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sell Stock_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User_25px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Enter_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancesl_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Group Man Woman_75px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Group Man Woman_25px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Group Man Woman_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NewFolder1\frm_tela_saida.cs" />
+    <Content Include="NewFolder1\frm_tela_saida.Designer.cs" />
+    <Content Include="NewFolder1\frm_veda_rapida.cs" />
+    <Content Include="NewFolder1\frm_veda_rapida.Designer.cs" />
+    <Content Include="NewFolder1\frm_Venda.cs" />
+    <Content Include="NewFolder1\frm_Venda.Designer.cs" />
+    <None Include="Resources\Contacts_150px.png" />
+    <None Include="Resources\Print_25px.png" />
+    <None Include="Resources\Todo List_25px.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="sistemintegradovdModelStoreContainer" CdmEntityContainer="sistemintegradovdEntities">
+    <EntitySetMapping Name="categoria_tb">
+      <EntityTypeMapping TypeName="sistemintegradovdModel.categoria_tb">
+        <MappingFragment StoreEntitySet="categoria_tb">
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+          <ScalarProperty Name="NomeCategoria" ColumnName="NomeCategoria" />
+          <ScalarProperty Name="DescricaoCategoria" ColumnName="DescricaoCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalhes_vendas_tb">
+      <EntityTypeMapping TypeName="sistemintegradovdModel.detalhes_vendas_tb">
+        <MappingFragment StoreEntitySet="detalhes_vendas_tb">
+          <ScalarProperty Name="idDetalhes_Vendas" ColumnName="idDetalhes_Vendas" />
+          <ScalarProperty Name="Produto_Preco" ColumnName="Produto_Preco" />
+          <ScalarProperty Name="Produto_Quantidade" ColumnName="Produto_Quantidade" />
+          <ScalarProperty Name="Produto_Total" ColumnName="Produto_Total" />
+          <ScalarProperty Name="Produto_Referencia" ColumnName="Produto_Referencia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="entradaproduto_tb">
+      <EntityTypeMapping TypeName="sistemintegradovdModel.entradaproduto_tb">
+        <MappingFragment StoreEntitySet="entradaproduto_tb">
+          <ScalarProperty Name="idEntradaProduto" ColumnName="idEntradaProduto" />
+          <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
+          <ScalarProperty Name="idProduto" ColumnName="idProduto" />
+          <ScalarProperty Name="DataEntrada" ColumnName="DataEntrada" />
+          <ScalarProperty Name="Quantidade" ColumnName="Quantidade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fonecedor_tb">
+      <EntityTypeMapping TypeName="sistemintegradovdModel.fonecedor_tb">
+        <MappingFragment StoreEntitySet="fonecedor_tb">
+          <ScalarProperty Name="idFonecedor_tb" ColumnName="idFonecedor_tb" />
+          <ScalarProperty Name="NomeFonecedor" ColumnName="NomeFonecedor" />
+          <ScalarProperty Name="Nuit" ColumnName="Nuit" />
+          <ScalarProperty Name="Contacto" ColumnName="Contacto" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Data_Fornecedor" ColumnName="Data_Fornecedor" />
+          <ScalarProperty Name="FonecedorCod" ColumnName="FonecedorCod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produtos_tb">
+      <EntityTypeMapping TypeName="sistemintegradovdModel.produtos_tb">
+        <MappingFragment StoreEntitySet="produtos_tb">
+          <ScalarProperty Name="idProdutos" ColumnName="idProdutos" />
+          <ScalarProperty Name="Produto_Nome" ColumnName="Produto_Nome" />
+          <ScalarProperty Name="Produto_Cod_Barra" ColumnName="Produto_Cod_Barra" />
+          <ScalarProperty Name="Produto_Val_Comp" ColumnName="Produto_Val_Comp" />
+          <ScalarProperty Name="Produto_Val_Venda" ColumnName="Produto_Val_Venda" />
+          <ScalarProperty Name="Produto_Stoque" ColumnName="Produto_Stoque" />
+          <ScalarProperty Name="Produto_Unidade" ColumnName="Produto_Unidade" />
+          <ScalarProperty Name="Produto_Referencia" ColumnName="Produto_Referencia" />
+          <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

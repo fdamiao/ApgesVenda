@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="sistemaintegradovdModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="sistemaintegradovdModelStoreContainer">
+    <EntitySet Name="categoria_tb" EntityType="sistemaintegradovdModel.Store.categoria_tb" store:Type="Tables" Schema="sistemaintegradovd" />
+    <EntitySet Name="detalhes_entradaprodu" EntityType="sistemaintegradovdModel.Store.detalhes_entradaprodu" store:Type="Tables" Schema="sistemaintegradovd" />
+    <EntitySet Name="detalhes_produto" EntityType="sistemaintegradovdModel.Store.detalhes_produto" store:Type="Tables" Schema="sistemaintegradovd" />
+    <EntitySet Name="empresa_tb" EntityType="sistemaintegradovdModel.Store.empresa_tb" store:Type="Tables" Schema="sistemaintegradovd" />
+    <EntitySet Name="entradaproduto_tb" EntityType="sistemaintegradovdModel.Store.entradaproduto_tb" store:Type="Tables" Schema="sistemaintegradovd" />
+    <EntitySet Name="fonecedor_tb" EntityType="sistemaintegradovdModel.Store.fonecedor_tb" store:Type="Tables" Schema="sistemaintegradovd" />
+    <EntitySet Name="produtos_tb" EntityType="sistemaintegradovdModel.Store.produtos_tb" store:Type="Tables" Schema="sistemaintegradovd" />
+    <EntitySet Name="tipousuario_tb" EntityType="sistemaintegradovdModel.Store.tipousuario_tb" store:Type="Tables" Schema="sistemaintegradovd" />
+    <EntitySet Name="usuario_tb" EntityType="sistemaintegradovdModel.Store.usuario_tb" store:Type="Tables" Schema="sistemaintegradovd" />
+    <EntitySet Name="venda_tb" EntityType="sistemaintegradovdModel.Store.venda_tb" store:Type="Tables" Schema="sistemaintegradovd" />
+    <AssociationSet Name="idCategoria" Association="sistemaintegradovdModel.Store.idCategoria">
+      <End Role="categoria_tb" EntitySet="categoria_tb" />
+      <End Role="produtos_tb" EntitySet="produtos_tb" />
+    </AssociationSet>
+    <AssociationSet Name="idEntradaProduto" Association="sistemaintegradovdModel.Store.idEntradaProduto">
+      <End Role="entradaproduto_tb" EntitySet="entradaproduto_tb" />
+      <End Role="detalhes_entradaprodu" EntitySet="detalhes_entradaprodu" />
+    </AssociationSet>
+    <AssociationSet Name="idFornecedor" Association="sistemaintegradovdModel.Store.idFornecedor">
+      <End Role="fonecedor_tb" EntitySet="fonecedor_tb" />
+      <End Role="entradaproduto_tb" EntitySet="entradaproduto_tb" />
+    </AssociationSet>
+    <AssociationSet Name="idProds" Association="sistemaintegradovdModel.Store.idProds">
+      <End Role="produtos_tb" EntitySet="produtos_tb" />
+      <End Role="detalhes_produto" EntitySet="detalhes_produto" />
+    </AssociationSet>
+    <AssociationSet Name="idProduEntrada" Association="sistemaintegradovdModel.Store.idProduEntrada">
+      <End Role="produtos_tb" EntitySet="produtos_tb" />
+      <End Role="detalhes_entradaprodu" EntitySet="detalhes_entradaprodu" />
+    </AssociationSet>
+    <AssociationSet Name="idTipoUsuari" Association="sistemaintegradovdModel.Store.idTipoUsuari">
+      <End Role="tipousuario_tb" EntitySet="tipousuario_tb" />
+      <End Role="usuario_tb" EntitySet="usuario_tb" />
+    </AssociationSet>
+    <AssociationSet Name="idUsuari" Association="sistemaintegradovdModel.Store.idUsuari">
+      <End Role="usuario_tb" EntitySet="usuario_tb" />
+      <End Role="venda_tb" EntitySet="venda_tb" />
+    </AssociationSet>
+    <AssociationSet Name="idVenda" Association="sistemaintegradovdModel.Store.idVenda">
+      <End Role="venda_tb" EntitySet="venda_tb" />
+      <End Role="detalhes_produto" EntitySet="detalhes_produto" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="categoria_tb">
+    <Key>
+      <PropertyRef Name="idCategoria" />
+    </Key>
+    <Property Name="idCategoria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NomeCategoria" Type="varchar" MaxLength="500" />
+    <Property Name="DescricaoCategoria" Type="varchar" MaxLength="500" />
+    <Property Name="ControleStock" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="detalhes_entradaprodu">
+    <Key>
+      <PropertyRef Name="idDetalhes_EntradaProdu" />
+    </Key>
+    <Property Name="idDetalhes_EntradaProdu" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Produto_Preco" Type="decimal" Scale="2" />
+    <Property Name="Produto_Quantidade" Type="int" />
+    <Property Name="Produto_Total" Type="decimal" Scale="2" />
+    <Property Name="idEntradaProduto" Type="int" />
+    <Property Name="idProduto" Type="int" />
+    <Property Name="Produto_Nome" Type="varchar" MaxLength="405" />
+    <Property Name="ValorCompra" Type="decimal" Scale="2" />
+    <Property Name="ValorVenda" Type="decimal" Scale="2" />
+    <Property Name="detalhes_entradaproducol" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="detalhes_produto">
+    <Key>
+      <PropertyRef Name="idDetalhes" />
+    </Key>
+    <Property Name="idDetalhes" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Prod_Preco" Type="decimal" Scale="2" />
+    <Property Name="Prod_Qty" Type="int" />
+    <Property Name="Pro_Tt" Type="decimal" Scale="2" />
+    <Property Name="idVenda" Type="int" />
+    <Property Name="idProd" Type="int" />
+    <Property Name="Prod_Referencia" Type="varchar" MaxLength="45" />
+    <Property Name="ProdutoNome" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="empresa_tb">
+    <Key>
+      <PropertyRef Name="idEmpresa" />
+    </Key>
+    <Property Name="idEmpresa" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NomeEmpresa" Type="varchar" MaxLength="500" />
+    <Property Name="NuitEmpresa" Type="varchar" MaxLength="45" />
+    <Property Name="ContactoEmpresa" Type="varchar" MaxLength="45" />
+    <Property Name="EmailEmpresa" Type="varchar" MaxLength="45" />
+    <Property Name="LogoTipo" Type="mediumblob" />
+    <Property Name="LocalizacaoEmpresa" Type="varchar" MaxLength="405" />
+    <Property Name="FileName" Type="varchar" MaxLength="425" />
+  </EntityType>
+  <EntityType Name="entradaproduto_tb">
+    <Key>
+      <PropertyRef Name="idEntradaProduto" />
+    </Key>
+    <Property Name="idEntradaProduto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idFornecedor" Type="int" />
+    <Property Name="DataEntrada" Type="datetime" />
+    <Property Name="DataRecebimento" Type="datetime" />
+    <Property Name="ValorRequizicao" Type="decimal" Scale="2" />
+    <Property Name="Comentario" Type="varchar" MaxLength="455" />
+  </EntityType>
+  <EntityType Name="fonecedor_tb">
+    <Key>
+      <PropertyRef Name="idFonecedor_tb" />
+    </Key>
+    <Property Name="idFonecedor_tb" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NomeFonecedor" Type="varchar" MaxLength="500" />
+    <Property Name="Nuit" Type="varchar" MaxLength="45" />
+    <Property Name="Contacto" Type="varchar" MaxLength="45" />
+    <Property Name="Email" Type="varchar" MaxLength="45" />
+    <Property Name="Data_Fornecedor" Type="varchar" MaxLength="500" />
+    <Property Name="FonecedorCod" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="produtos_tb">
+    <Key>
+      <PropertyRef Name="idProdutos" />
+    </Key>
+    <Property Name="idProdutos" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Produto_Nome" Type="varchar" MaxLength="100" />
+    <Property Name="Produto_Cod_Barra" Type="varchar" MaxLength="100" />
+    <Property Name="Produto_Val_Comp" Type="decimal" Scale="2" />
+    <Property Name="Produto_Val_Venda" Type="decimal" Scale="2" />
+    <Property Name="Produto_Stoque" Type="int" />
+    <Property Name="Produto_Unidade" Type="varchar" MaxLength="45" />
+    <Property Name="Produto_Referencia" Type="varchar" MaxLength="45" />
+    <Property Name="idCategoria" Type="int" />
+  </EntityType>
+  <EntityType Name="tipousuario_tb">
+    <Key>
+      <PropertyRef Name="idTipoUsuario" />
+    </Key>
+    <Property Name="idTipoUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NomeTipoUsuario" Type="varchar" MaxLength="45" />
+    <Property Name="NivelPermissao" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="usuario_tb">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="NomeCompleto" Type="varchar" MaxLength="500" />
+    <Property Name="DataNascimento" Type="date" />
+    <Property Name="NomeUsuario" Type="varchar" MaxLength="500" />
+    <Property Name="SenhaUsuario" Type="varchar" MaxLength="500" />
+    <Property Name="idTipoUsuario" Type="int" />
+  </EntityType>
+  <EntityType Name="venda_tb">
+    <Key>
+      <PropertyRef Name="idVenda" />
+    </Key>
+    <Property Name="idVenda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Data_Venda" Type="datetime" />
+    <Property Name="Subtotal_Venda" Type="decimal" Scale="2" />
+    <Property Name="Iva_Venda" Type="decimal" Scale="2" />
+    <Property Name="Comentario" Type="varchar" MaxLength="500" />
+    <Property Name="idUsuario" Type="int" />
+    <Property Name="Total_Venda" Type="decimal" Scale="2" />
+    <Property Name="NPedido" Type="int" />
+    <Property Name="FormaPagamento" Type="varchar" MaxLength="45" />
+    <Property Name="Data" Type="date" />
+  </EntityType>
+  <Association Name="idCategoria">
+    <End Role="categoria_tb" Type="sistemaintegradovdModel.Store.categoria_tb" Multiplicity="0..1" />
+    <End Role="produtos_tb" Type="sistemaintegradovdModel.Store.produtos_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="categoria_tb">
+        <PropertyRef Name="idCategoria" />
+      </Principal>
+      <Dependent Role="produtos_tb">
+        <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="idEntradaProduto">
+    <End Role="entradaproduto_tb" Type="sistemaintegradovdModel.Store.entradaproduto_tb" Multiplicity="0..1" />
+    <End Role="detalhes_entradaprodu" Type="sistemaintegradovdModel.Store.detalhes_entradaprodu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="entradaproduto_tb">
+        <PropertyRef Name="idEntradaProduto" />
+      </Principal>
+      <Dependent Role="detalhes_entradaprodu">
+        <PropertyRef Name="idEntradaProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="idFornecedor">
+    <End Role="fonecedor_tb" Type="sistemaintegradovdModel.Store.fonecedor_tb" Multiplicity="0..1" />
+    <End Role="entradaproduto_tb" Type="sistemaintegradovdModel.Store.entradaproduto_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fonecedor_tb">
+        <PropertyRef Name="idFonecedor_tb" />
+      </Principal>
+      <Dependent Role="entradaproduto_tb">
+        <PropertyRef Name="idFornecedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="idProds">
+    <End Role="produtos_tb" Type="sistemaintegradovdModel.Store.produtos_tb" Multiplicity="0..1" />
+    <End Role="detalhes_produto" Type="sistemaintegradovdModel.Store.detalhes_produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produtos_tb">
+        <PropertyRef Name="idProdutos" />
+      </Principal>
+      <Dependent Role="detalhes_produto">
+        <PropertyRef Name="idProd" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="idProduEntrada">
+    <End Role="produtos_tb" Type="sistemaintegradovdModel.Store.produtos_tb" Multiplicity="0..1" />
+    <End Role="detalhes_entradaprodu" Type="sistemaintegradovdModel.Store.detalhes_entradaprodu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produtos_tb">
+        <PropertyRef Name="idProdutos" />
+      </Principal>
+      <Dependent Role="detalhes_entradaprodu">
+        <PropertyRef Name="idProduto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="idTipoUsuari">
+    <End Role="tipousuario_tb" Type="sistemaintegradovdModel.Store.tipousuario_tb" Multiplicity="0..1" />
+    <End Role="usuario_tb" Type="sistemaintegradovdModel.Store.usuario_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipousuario_tb">
+        <PropertyRef Name="idTipoUsuario" />
+      </Principal>
+      <Dependent Role="usuario_tb">
+        <PropertyRef Name="idTipoUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="idUsuari">
+    <End Role="usuario_tb" Type="sistemaintegradovdModel.Store.usuario_tb" Multiplicity="0..1" />
+    <End Role="venda_tb" Type="sistemaintegradovdModel.Store.venda_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario_tb">
+        <PropertyRef Name="idUsuario" />
+      </Principal>
+      <Dependent Role="venda_tb">
+        <PropertyRef Name="idUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="idVenda">
+    <End Role="venda_tb" Type="sistemaintegradovdModel.Store.venda_tb" Multiplicity="0..1" />
+    <End Role="detalhes_produto" Type="sistemaintegradovdModel.Store.detalhes_produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="venda_tb">
+        <PropertyRef Name="idVenda" />
+      </Principal>
+      <Dependent Role="detalhes_produto">
+        <PropertyRef Name="idVenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
